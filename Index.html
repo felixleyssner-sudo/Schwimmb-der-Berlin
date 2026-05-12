@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Schwimmbäder">
+<meta name="theme-color" content="#060e1c">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<title>Schwimmbäder Berlin</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* ── CONFIG ─────────────────────────────────────── */
+:root {
+  --bg:     #060e1c;
+  --bg2:    #0c1728;
+  --bg3:    #111f35;
+  --card:   #0f1e33;
+  --border: rgba(255,255,255,0.07);
+  --text:   #dde6f5;
+  --text2:  #6b84a8;
+  --text3:  #2e4060;
+  --green:  #22c55e;
+  --red:    #ef4444;
+  --yellow: #f59e0b;
+  --blue:   #38bdf8;
+  --safe-t: env(safe-area-inset-top,0px);
+  --safe-b: env(safe-area-inset-bottom,0px);
+}
+
+* { box-sizing:border-box; margin:0; padding:0; -webkit-tap-highlight-color:transparent; }
+html,body { height:100%; background:var(--bg); font-family:'Inter',-apple-system,sans-serif; color:var(--text); overscroll-behavior:none; }
+
+/* ── LAYOUT ─────────────────────────────────────── */
+#app {
+  max-width:600px; margin:0 auto; min-height:100vh;
+  padding: calc(var(--safe-t) + 16px) 16px calc(var(--safe-b) + 20px);
+  display:flex; flex-direction:column; gap:14px;
+}
+
+/* ── HEADER ─────────────────────────────────────── */
+.hdr { display:flex; align-items:center; justify-content:space-between; }
+.hdr h1 { font-size:20px; font-weight:700; letter-spacing:-.03em; }
+.hdr-right { display:flex; align-items:center; gap:10px; }
+.loc-btn {
+  display:flex; align-items:center; gap:5px;
+  background:var(--bg3); border:1px solid var(--border);
+  border-radius:20px; padding:6px 12px;
+  font-size:11px; color:var(--text2); cursor:pointer;
+  font-family:inherit; transition:all .15s;
+}
+.loc-btn:active { opacity:.7; }
+.loc-btn.loading { animation: pulse 1s infinite; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.5} }
+.clock-chip {
+  font-size:12px; color:var(--text2);
+  background:var(--bg3); border:1px solid var(--border);
+  border-radius:20px; padding:6px 10px;
+}
+
+/* ── WEATHER CARD ───────────────────────────────── */
+.weather-card {
+  border-radius:16px; padding:14px 16px;
+  border:1px solid var(--border);
+  background:linear-gradient(135deg,#0c2040,#061830);
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+}
+.w-left { display:flex; align-items:center; gap:10px; }
+.w-icon { font-size:32px; line-height:1; }
+.w-temp { font-size:22px; font-weight:700; }
+.w-desc { font-size:11px; color:var(--text2); margin-top:1px; }
+.w-right { display:flex; flex-direction:column; gap:6px; align-items:flex-end; }
+.rain-chip {
+  font-size:11px; font-weight:600; padding:4px 10px;
+  border-radius:20px; white-space:nowrap;
+}
+.rain-chip.safe { background:rgba(34,197,94,.12); color:#4ade80; border:1px solid rgba(34,197,94,.2); }
+.rain-chip.warn { background:rgba(239,68,68,.12); color:#f87171; border:1px solid rgba(239,68,68,.2); border-left:3px solid #ef4444; }
+.rain-chip.maybe { background:rgba(245,158,11,.12); color:#fcd34d; border:1px solid rgba(245,158,11,.2); }
+.w-wind { font-size:11px; color:var(--text2); }
+.weather-error { font-size:11px; color:var(--text3); font-style:italic; }
+
+/* ── DAY TABS ───────────────────────────────────── */
+.day-tabs {
+  display:grid; grid-template-columns:repeat(7,1fr); gap:3px;
+  background:var(--bg2); padding:5px; border-radius:14px;
+  border:1px solid var(--border);
+}
+.day-tab {
+  display:flex; flex-direction:column; align-items:center;
+  padding:7px 2px; border-radius:9px; border:none;
+  background:transparent; color:var(--text2);
+  font-family:inherit; font-size:10px; font-weight:500;
+  cursor:pointer; transition:all .18s; gap:3px; position:relative;
+}
+.day-tab .da { font-size:10px; }
+.day-tab .dc {
+  width:15px; height:15px; border-radius:50%;
+  background:rgba(255,255,255,.06); display:flex;
+  align-items:center; justify-content:center; font-size:9px; color:var(--text3);
+}
+.day-tab.active { background:#1d4ed8; color:white; }
+.day-tab.active .dc { background:rgba(255,255,255,.25); color:white; }
+.day-tab.today .da { color:var(--yellow); }
+.day-tab.today.active .da { color:white; }
+.day-tab.today::after {
+  content:''; position:absolute; bottom:3px;
+  width:4px; height:4px; border-radius:50%; background:var(--yellow);
+}
+.day-tab.today.active::after { background:white; }
+
+/* ── SUMMARY BAR ────────────────────────────────── */
+.sum-bar { display:flex; align-items:center; justify-content:space-between; }
+.sum-label { font-size:11px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--text3); }
+.open-pill {
+  font-size:11px; font-weight:600; padding:3px 10px;
+  border-radius:20px;
+}
+.open-pill.y { background:rgba(34,197,94,.1); color:#4ade80; border:1px solid rgba(34,197,94,.2); }
+.open-pill.n { background:rgba(239,68,68,.08); color:#f87171; border:1px solid rgba(239,68,68,.15); }
+
+/* ── POOL CARDS ─────────────────────────────────── */
+.pool-list { display:flex; flex-direction:column; gap:8px; }
+
+.pcard {
+  border-radius:14px; padding:14px 16px;
+  border:1px solid var(--border); background:var(--card);
+  transition:all .15s; position:relative; overflow:hidden;
+}
+.pcard.open { border-color:rgba(255,255,255,.1); background:var(--bg3); }
+.pcard.closed { opacity:.35; }
+.pcard.open-now::before {
+  content:''; position:absolute; left:0; top:0; bottom:0;
+  width:3px; background:var(--green); border-radius:14px 0 0 14px;
+}
+
+.pcard-top { display:flex; align-items:center; gap:12px; }
+.pbadge {
+  width:38px; height:38px; border-radius:10px; flex-shrink:0;
+  display:flex; align-items:center; justify-content:center;
+  font-size:10px; font-weight:700;
+}
+.pinfo { flex:1; min-width:0; }
+.pname { font-size:14px; font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.pmeta { font-size:11px; color:var(--text2); margin-top:2px; display:flex; align-items:center; gap:8px; }
+.pdist { color:var(--blue); font-weight:500; }
+
+.phours { text-align:right; flex-shrink:0; }
+.phours-line { font-size:13px; font-weight:600; white-space:nowrap; }
+.pclosed-lbl { font-size:11px; color:var(--text3); }
+
+.pcard-bottom { display:flex; align-items:center; gap:10px; margin-top:10px; padding-top:10px; border-top:1px solid var(--border); }
+.status-chip { display:flex; align-items:center; gap:4px; font-size:11px; font-weight:500; }
+.status-dot { width:6px; height:6px; border-radius:50%; }
+.status-dot.open { background:var(--green); box-shadow:0 0 6px var(--green); }
+.status-dot.closed { background:var(--red); }
+.temp-chip { font-size:11px; color:var(--text2); margin-left:auto; display:flex; align-items:center; gap:4px; }
+.temp-val { color:var(--text); font-weight:500; }
+
+/* ── LOADING / ERROR STATES ─────────────────────── */
+.loading-card, .err-card {
+  border-radius:14px; padding:20px; text-align:center;
+  border:1px solid var(--border); background:var(--card);
+  color:var(--text2); font-size:13px;
+}
+.spinner { display:inline-block; width:16px; height:16px; border:2px solid var(--border); border-top-color:var(--blue); border-radius:50%; animation:spin .7s linear infinite; margin-right:8px; vertical-align:middle; }
+@keyframes spin { to { transform:rotate(360deg); } }
+
+/* ── SPLASH ─────────────────────────────────────── */
+#splash {
+  position:fixed; inset:0; z-index:999;
+  background:#060e1c;
+  display:flex; flex-direction:column;
+  align-items:center; justify-content:center;
+  transition:opacity .7s ease;
+}
+#splash.hide { opacity:0; pointer-events:none; }
+#splash svg { width:min(82vw,320px); }
+#splash .splash-sub {
+  margin-top:16px; font-size:12px; color:#2e4a72;
+  letter-spacing:.14em; text-transform:uppercase; font-weight:600;
+}
+#splash .splash-dots { margin-top:32px; display:flex; gap:8px; }
+#splash .splash-dots span {
+  width:6px; height:6px; border-radius:50%; background:#1a3560;
+  animation:dotP 1.4s ease-in-out infinite;
+}
+#splash .splash-dots span:nth-child(2){animation-delay:.2s}
+#splash .splash-dots span:nth-child(3){animation-delay:.4s}
+@keyframes dotP{0%,80%,100%{background:#1a3560;transform:scale(1)}40%{background:#38bdf8;transform:scale(1.5)}}
+
+/* ── FOOTER ─────────────────────────────────────── */
+.footer { font-size:10px; color:var(--text3); text-align:center; line-height:1.7; margin-top:4px; }
+</style>
+
+</head>
+<body>
+<!-- SPLASH SCREEN -->
+<div id="splash">
+  <svg viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="bg" x1="0" y1="0" x2="320" y2="180" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stop-color="#071428"/>
+        <stop offset="100%" stop-color="#0a2040"/>
+      </linearGradient>
+      <linearGradient id="wave1" x1="0" y1="0" x2="320" y2="0" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stop-color="#0ea5e9" stop-opacity=".35"/>
+        <stop offset="100%" stop-color="#38bdf8" stop-opacity=".15"/>
+      </linearGradient>
+      <linearGradient id="wave2" x1="0" y1="0" x2="320" y2="0" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stop-color="#1d4ed8" stop-opacity=".4"/>
+        <stop offset="100%" stop-color="#0ea5e9" stop-opacity=".2"/>
+      </linearGradient>
+      <linearGradient id="glow" x1="160" y1="0" x2="160" y2="80" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stop-color="#38bdf8" stop-opacity=".18"/>
+        <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
+      </linearGradient>
+      <filter id="blur"><feGaussianBlur stdDeviation="18"/></filter>
+      <filter id="softblur"><feGaussianBlur stdDeviation="4"/></filter>
+    </defs>
+
+```
+<!-- Background -->
+<rect width="320" height="180" rx="20" fill="url(#bg)"/>
+
+<!-- Glow orb -->
+<ellipse cx="160" cy="30" rx="120" ry="60" fill="url(#glow)" filter="url(#blur)"/>
+
+<!-- Wave layers -->
+<path d="M0 115 Q40 100 80 115 Q120 130 160 115 Q200 100 240 115 Q280 130 320 115 L320 180 L0 180 Z" fill="url(#wave2)"/>
+<path d="M0 125 Q40 112 80 125 Q120 138 160 125 Q200 112 240 125 Q280 138 320 125 L320 180 L0 180 Z" fill="url(#wave1)"/>
+<path d="M0 138 Q50 126 100 138 Q150 150 200 138 Q250 126 320 138 L320 180 L0 180 Z" fill="#0c2d52" opacity=".6"/>
+
+<!-- Lane lines -->
+<line x1="0" y1="108" x2="320" y2="108" stroke="#38bdf8" stroke-width=".5" stroke-opacity=".15" stroke-dasharray="8 6"/>
+<line x1="0" y1="122" x2="320" y2="122" stroke="#38bdf8" stroke-width=".5" stroke-opacity=".1" stroke-dasharray="8 6"/>
+
+<!-- Swimmer silhouette -->
+<g transform="translate(38,68)" opacity=".9">
+  <!-- head -->
+  <circle cx="32" cy="8" r="7" fill="#38bdf8" opacity=".8"/>
+  <!-- body/arm stroke -->
+  <path d="M25 12 Q10 18 0 16" stroke="#38bdf8" stroke-width="3.5" stroke-linecap="round" fill="none" opacity=".7"/>
+  <path d="M32 15 Q38 22 50 20 Q62 18 68 22" stroke="#38bdf8" stroke-width="3" stroke-linecap="round" fill="none" opacity=".6"/>
+  <!-- legs -->
+  <path d="M32 15 Q28 28 22 34" stroke="#38bdf8" stroke-width="3" stroke-linecap="round" fill="none" opacity=".5"/>
+  <path d="M36 16 Q40 28 46 32" stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round" fill="none" opacity=".4"/>
+</g>
+
+<!-- Stars / bubbles -->
+<circle cx="260" cy="30" r="1.5" fill="#38bdf8" opacity=".4"/>
+<circle cx="290" cy="55" r="1" fill="#38bdf8" opacity=".3"/>
+<circle cx="20" cy="45" r="1" fill="#38bdf8" opacity=".3"/>
+<circle cx="55" cy="28" r="1.5" fill="#60a5fa" opacity=".25"/>
+
+<!-- Title text -->
+<text x="160" y="58" text-anchor="middle" font-family="'Inter',-apple-system,sans-serif" font-size="26" font-weight="700" fill="#dde6f5" letter-spacing="-1">Schwimmbäder</text>
+<text x="160" y="78" text-anchor="middle" font-family="'Inter',-apple-system,sans-serif" font-size="13" font-weight="500" fill="#38bdf8" letter-spacing="2" opacity=".8">BERLIN</text>
+
+<!-- Bottom tag -->
+<text x="160" y="168" text-anchor="middle" font-family="'Inter',-apple-system,sans-serif" font-size="9" fill="#2e4a72" letter-spacing="1">Berliner Bäder · Live-Standort · Öffnungszeiten</text>
+```
+
+  </svg>
+
+  <div class="splash-sub">Standort wird geladen</div>
+  <div class="splash-dots"><span></span><span></span><span></span></div>
+</div>
+
+<div id="app">
+  <div class="hdr">
+    <div>
+      <h1>🏊 Schwimmbäder</h1>
+    </div>
+    <div class="hdr-right">
+      <button class="loc-btn" id="locBtn" onclick="getLocation()">📍 Standort</button>
+      <div class="clock-chip" id="clk"></div>
+    </div>
+  </div>
+
+  <div id="weatherBox"></div>
+  <div class="day-tabs" id="dayTabs"></div>
+  <div class="sum-bar"><div class="sum-label" id="sumLabel"></div><span class="open-pill" id="openPill"></span></div>
+  <div class="pool-list" id="poolList"></div>
+  <div class="footer" id="footer">Berliner Bäder-Betriebe · Stand Mai 2026 · Öffnungszeiten können abweichen</div>
+</div>
+
+<script>
+/* ═══════════════════════════════════════════════════
+   CONFIGURATION  ← nur hier eintragen
+   ═══════════════════════════════════════════════════ */
+const OWM_KEY = "51382eb605a9bcc5de57e7a7da5ee039";
+
+/* ═══════════════════════════════════════════════════
+   POOL-DATENBANK
+   ═══════════════════════════════════════════════════ */
+const POOLS = [
+  {
+    name:"Fischerinsel", short:"FI", color:"#0ea5e9", type:"indoor",
+    lat:52.5124, lng:13.4044, address:"Fischerinsel 11, 10179",
+    hours:{Mo:[{s:"6:30",e:"8:00"}],Di:[{s:"6:30",e:"8:00"}],Mi:[],Do:[{s:"10:30",e:"17:30"}],Fr:[{s:"6:30",e:"16:00"}],Sa:[],So:[]}
+  },
+  {
+    name:"Sommerbad Kreuzberg", short:"SK", color:"#f59e0b", type:"outdoor",
+    lat:52.4979, lng:13.4057, address:"Prinzenstraße 113, 10969",
+    hours:{Mo:[{s:"7:00",e:"20:00"}],Di:[{s:"7:00",e:"20:00"}],Mi:[{s:"7:00",e:"20:00"}],Do:[{s:"7:00",e:"20:00"}],Fr:[{s:"7:00",e:"20:00"}],Sa:[{s:"7:00",e:"20:00"}],So:[{s:"7:00",e:"20:00"}]}
+  },
+  {
+    name:"Stadtbad Mitte", short:"SM", color:"#8b5cf6", type:"indoor",
+    lat:52.5295, lng:13.3929, address:"Gartenstraße 5, 10115",
+    hours:{Mo:[{s:"6:30",e:"8:00"},{s:"16:00",e:"22:00"}],Di:[{s:"6:30",e:"8:00"}],Mi:[{s:"6:30",e:"8:00"},{s:"16:00",e:"22:00"}],Do:[{s:"8:00",e:"15:00"}],Fr:[{s:"12:00",e:"22:00"}],Sa:[],So:[]}
+  },
+  {
+    name:"Thälmann-Park", short:"TP", color:"#10b981", type:"indoor",
+    lat:52.5409, lng:13.4339, address:"Lilli-Henoch-Str. 20, 10405",
+    hours:{Mo:[{s:"6:30",e:"22:00"}],Di:[{s:"6:30",e:"22:00"}],Mi:[{s:"10:00",e:"22:00"}],Do:[{s:"10:00",e:"17:00"}],Fr:[{s:"6:30",e:"22:00"}],Sa:[],So:[]}
+  },
+  {
+    name:"Stadtbad Tiergarten", short:"ST", color:"#ef4444", type:"indoor",
+    lat:52.5275, lng:13.3597, address:"Seydlitzstraße 7, 10557",
+    hours:{Mo:[{s:"6:30",e:"8:00"}],Di:[{s:"6:30",e:"22:00"}],Mi:[{s:"10:00",e:"22:00"}],Do:[{s:"9:00",e:"17:00"}],Fr:[{s:"6:30",e:"22:00"}],Sa:[{s:"9:00",e:"17:00"}],So:[{s:"9:00",e:"17:00"}]}
+  },
+  {
+    name:"SSE Europasportpark", short:"EP", color:"#f97316", type:"indoor",
+    lat:52.5291, lng:13.4526, address:"Paul-Heyse-Str. 26, 10407",
+    hours:{Mo:[{s:"6:30",e:"22:30"}],Di:[],Mi:[{s:"6:30",e:"22:30"}],Do:[{s:"10:00",e:"18:00"}],Fr:[{s:"11:00",e:"22:30"}],Sa:[{s:"10:00",e:"18:00"}],So:[{s:"10:00",e:"18:00"}]}
+  },
+  {
+    name:"Stadtbad Neukölln", short:"SN", color:"#ec4899", type:"indoor",
+    lat:52.4747, lng:13.4342, address:"Ganghoferstr. 3, 12053",
+    hours:{Mo:[{s:"6:30",e:"22:00"}],Di:[{s:"10:00",e:"22:00"}],Mi:[{s:"6:30",e:"22:00"}],Do:[{s:"10:00",e:"17:00"}],Fr:[{s:"6:30",e:"22:00"}],Sa:[{s:"10:00",e:"17:00"}],So:[{s:"10:00",e:"17:00"}]}
+  },
+  {
+    name:"Stadtbad Charlottenburg", short:"SC", color:"#06b6d4", type:"indoor",
+    lat:52.5159, lng:13.3062, address:"Krumme Str. 10, 10585",
+    hours:{Mo:[{s:"6:30",e:"22:00"}],Di:[{s:"10:00",e:"22:00"}],Mi:[{s:"6:30",e:"22:00"}],Do:[{s:"10:00",e:"22:00"}],Fr:[{s:"6:30",e:"22:00"}],Sa:[{s:"10:00",e:"17:00"}],So:[{s:"10:00",e:"17:00"}]}
+  },
+  {
+    name:"Sommerbad Humboldthain", short:"SH", color:"#84cc16", type:"outdoor",
+    lat:52.5472, lng:13.3836, address:"Edinburger Str. 4, 13357",
+    hours:{Mo:[{s:"7:00",e:"20:00"}],Di:[{s:"7:00",e:"20:00"}],Mi:[{s:"7:00",e:"20:00"}],Do:[{s:"7:00",e:"20:00"}],Fr:[{s:"7:00",e:"20:00"}],Sa:[{s:"7:00",e:"20:00"}],So:[{s:"7:00",e:"20:00"}]}
+  },
+  {
+    name:"Kombibad Seestraße", short:"KS", color:"#a78bfa", type:"combo",
+    lat:52.5516, lng:13.3574, address:"Seestraße 80, 13347",
+    hours:{Mo:[{s:"6:30",e:"22:00"}],Di:[{s:"6:30",e:"22:00"}],Mi:[{s:"6:30",e:"22:00"}],Do:[{s:"10:00",e:"17:00"}],Fr:[{s:"6:30",e:"22:00"}],Sa:[{s:"10:00",e:"20:00"}],So:[{s:"10:00",e:"20:00"}]}
+  }
+];
+
+/* ═══════════════════════════════════════════════════
+   HILFSFUNKTIONEN
+   ═══════════════════════════════════════════════════ */
+const DK = ["So","Mo","Di","Mi","Do","Fr","Sa"];
+const DF = {Mo:"Montag",Di:"Dienstag",Mi:"Mittwoch",Do:"Donnerstag",Fr:"Freitag",Sa:"Samstag",So:"Sonntag"};
+
+function haversine(la1,lo1,la2,lo2) {
+  const R=6371,d2r=Math.PI/180;
+  const dLa=(la2-la1)*d2r, dLo=(lo2-lo1)*d2r;
+  const a=Math.sin(dLa/2)**2+Math.cos(la1*d2r)*Math.cos(la2*d2r)*Math.sin(dLo/2)**2;
+  return R*2*Math.atan2(Math.sqrt(a),Math.sqrt(1-a));
+}
+
+function toMin(t) {
+  const [h,m]=(t||"0:0").split(":").map(Number);
+  return h*60+(m||0);
+}
+
+function isOpenNow(pool, day) {
+  const slots=pool.hours[day]||[];
+  if(!slots.length) return false;
+  const now=new Date(), cur=now.getHours()*60+now.getMinutes();
+  return slots.some(s=>cur>=toMin(s.s)&&cur<toMin(s.e));
+}
+
+function hoursDisplay(pool, day) {
+  const slots=pool.hours[day]||[];
+  if(!slots.length) return null;
+  return slots.map(s=>`${s.s}–${s.e}`).join(" / ");
+}
+
+function waterTemp(pool) {
+  if(pool.type==="indoor") return "28°C";
+  const m=new Date().getMonth(); // 0=Jan
+  const temps=[null,null,null,17,20,22,25,26,23,20,null,null];
+  const t=temps[m];
+  return t?`${t}°C`:null;
+}
+
+function fmtDist(d) {
+  if(d<1) return Math.round(d*1000)+"m";
+  return d.toFixed(1).replace(".",",")+" km";
+}
+
+/* ═══════════════════════════════════════════════════
+   ZUSTAND
+   ═══════════════════════════════════════════════════ */
+let userLat=null, userLng=null;
+let selDay=DK[new Date().getDay()];
+const todayKey=selDay;
+let weatherData=null;
+
+/* ═══════════════════════════════════════════════════
+   STANDORT
+   ═══════════════════════════════════════════════════ */
+function getLocation() {
+  const btn=document.getElementById("locBtn");
+  btn.className="loc-btn loading";
+  btn.textContent="📍 Suche…";
+  navigator.geolocation.getCurrentPosition(
+    pos => {
+      userLat=pos.coords.latitude;
+      userLng=pos.coords.longitude;
+      btn.className="loc-btn";
+      btn.textContent="📍 Aktuell";
+      if(OWM_KEY!=="DEIN_API_KEY_HIER") fetchWeather();
+      renderPools();
+    },
+    () => {
+      btn.className="loc-btn";
+      btn.textContent="📍 Standort";
+      renderPools();
+    },
+    {timeout:8000, enableHighAccuracy:true}
+  );
+}
+
+/* ═══════════════════════════════════════════════════
+   WETTER
+   ═══════════════════════════════════════════════════ */
+const WEATHER_ICONS = {
+  "01":"☀️","02":"🌤","03":"⛅","04":"☁️",
+  "09":"🌧","10":"🌦","11":"⛈","13":"🌨","50":"🌫"
+};
+
+async function fetchWeather() {
+  if(!userLat||OWM_KEY==="DEIN_API_KEY_HIER") return;
+  try {
+    const [cur,fc] = await Promise.all([
+      fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${userLat}&lon=${userLng}&appid=${OWM_KEY}&units=metric&lang=de`).then(r=>r.json()),
+      fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${userLat}&lon=${userLng}&appid=${OWM_KEY}&units=metric&cnt=6&lang=de`).then(r=>r.json())
+    ]);
+    const rain3h = fc.list.slice(0,3).some(i=>
+      (i.weather[0].id>=200&&i.weather[0].id<700)||
+      (i.pop&&i.pop>0.4)
+    );
+    const pop = Math.max(...fc.list.slice(0,3).map(i=>i.pop||0));
+    weatherData = {
+      temp: Math.round(cur.main.temp),
+      feel: Math.round(cur.main.feels_like),
+      desc: cur.weather[0].description,
+      icon: WEATHER_ICONS[cur.weather[0].icon.slice(0,2)] || "🌡",
+      wind: Math.round(cur.wind.speed*3.6),
+      rain: rain3h,
+      pop: Math.round(pop*100)
+    };
+    renderWeather();
+  } catch(e) {
+    document.getElementById("weatherBox").innerHTML=
+      `<div class="weather-card"><span class="weather-error">⚠️ Wetter konnte nicht geladen werden</span></div>`;
+  }
+}
+
+function renderWeather() {
+  if(!weatherData) {
+    if(OWM_KEY==="DEIN_API_KEY_HIER") {
+      document.getElementById("weatherBox").innerHTML=
+        `<div class="weather-card"><span class="weather-error">🔑 API-Key eintragen für Wetter & Regenwarnung</span></div>`;
+    }
+    return;
+  }
+  const w=weatherData;
+  const rainChip = w.rain
+    ? `<div class="rain-chip warn">🌧 Regen in 1–3h (${w.pop}%)<br><small>Regenzeug mitnehmen!</small></div>`
+    : w.pop>20
+      ? `<div class="rain-chip maybe">🌦 Evtl. Regen (${w.pop}%)</div>`
+      : `<div class="rain-chip safe">✅ Trocken – gutes Fahrradwetter</div>`;
+  document.getElementById("weatherBox").innerHTML=`
+    <div class="weather-card">
+      <div class="w-left">
+        <div class="w-icon">${w.icon}</div>
+        <div>
+          <div class="w-temp">${w.temp}°C</div>
+          <div class="w-desc">${w.desc} · Gefühlt ${w.feel}°C</div>
+        </div>
+      </div>
+      <div class="w-right">
+        ${rainChip}
+        <div class="w-wind">💨 ${w.wind} km/h</div>
+      </div>
+    </div>`;
+}
+
+/* ═══════════════════════════════════════════════════
+   DAY TABS
+   ═══════════════════════════════════════════════════ */
+function renderTabs() {
+  const ord=["Mo","Di","Mi","Do","Fr","Sa","So"];
+  document.getElementById("dayTabs").innerHTML=ord.map(d=>`
+    <button class="day-tab${d===selDay?" active":""}${d===todayKey?" today":""}" onclick="selDay='${d}';renderTabs();renderPools()">
+      <span class="da">${d}</span>
+      <span class="dc">${POOLS.filter(p=>(p.hours[d]||[]).length).length}</span>
+    </button>`).join("");
+}
+
+/* ═══════════════════════════════════════════════════
+   POOL-LISTE
+   ═══════════════════════════════════════════════════ */
+function renderPools() {
+  const label=document.getElementById("sumLabel");
+  const pill=document.getElementById("openPill");
+  label.textContent=DF[selDay]+(selDay===todayKey?" · Heute":"");
+
+  let pools=[...POOLS];
+
+  // Entfernung berechnen
+  if(userLat) {
+    pools=pools.map(p=>({...p,dist:haversine(userLat,userLng,p.lat,p.lng)}));
+    pools.sort((a,b)=>a.dist-b.dist);
+  }
+
+  const hasHours=pools.filter(p=>(p.hours[selDay]||[]).length);
+  pill.className="open-pill "+(hasHours.length?"y":"n");
+  pill.textContent=hasHours.length?hasHours.length+" geöffnet":"Alle geschlossen";
+
+  const isToday=selDay===todayKey;
+
+  document.getElementById("poolList").innerHTML=pools.map(p=>{
+    const slots=p.hours[selDay]||[];
+    const hasSlots=slots.length>0;
+    const openNow=isToday&&isOpenNow(p,selDay);
+    const display=hoursDisplay(p,selDay);
+    const wt=waterTemp(p);
+    const distStr=p.dist!=null?fmtDist(p.dist):null;
+    const typeLabel=p.type==="outdoor"?"☀️ Freibad":p.type==="combo"?"🏗 Kombibad":"🏛 Hallenbad";
+
+    const hoursHtml=display
+      ? display.split(" / ").map(t=>`<div class="phours-line" style="color:${p.color}">${t}</div>`).join("")
+      : `<span class="pclosed-lbl">Geschlossen</span>`;
+
+    const statusHtml=isToday?`
+      <div class="status-chip">
+        <div class="status-dot ${openNow?"open":"closed"}"></div>
+        <span style="color:${openNow?"#4ade80":"#f87171"}">${openNow?"Jetzt geöffnet":"Jetzt geschlossen"}</span>
+      </div>`:
+      `<div class="status-chip"><span style="color:var(--text3)">${typeLabel}</span></div>`;
+
+    const tempHtml=wt?`<div class="temp-chip">💧 <span class="temp-val">${wt}</span></div>`:"";
+
+    return `<div class="pcard ${hasSlots?"open":"closed"}${openNow?" open-now":""}">
+      <div class="pcard-top">
+        <div class="pbadge" style="background:${p.color}1a;color:${p.color};border:1px solid ${p.color}33">${p.short}</div>
+        <div class="pinfo">
+          <div class="pname">${p.name}</div>
+          <div class="pmeta">
+            ${distStr?`<span class="pdist">${distStr}</span>`:""}
+            <span>${p.address}</span>
+          </div>
+        </div>
+        <div class="phours">${hoursHtml}</div>
+      </div>
+      <div class="pcard-bottom">
+        ${statusHtml}
+        ${tempHtml}
+      </div>
+    </div>`;
+  }).join("");
+}
+
+/* ═══════════════════════════════════════════════════
+   UHRZEIT
+   ═══════════════════════════════════════════════════ */
+function tick() {
+  const n=new Date();
+  document.getElementById("clk").textContent=
+    String(n.getHours()).padStart(2,"0")+":"+String(n.getMinutes()).padStart(2,"0");
+}
+
+/* ═══════════════════════════════════════════════════
+   PWA ICON (Homescreen)
+   ═══════════════════════════════════════════════════ */
+function setIcon() {
+  try {
+    const c=document.createElement("canvas");
+    c.width=180;c.height=180;
+    const ctx=c.getContext("2d");
+    // Background gradient
+    const g=ctx.createLinearGradient(0,0,180,180);
+    g.addColorStop(0,"#071428");g.addColorStop(1,"#0a2a50");
+    ctx.fillStyle=g;
+    ctx.beginPath();ctx.roundRect(0,0,180,180,38);ctx.fill();
+    // Wave
+    ctx.fillStyle="rgba(14,165,233,0.3)";
+    ctx.beginPath();ctx.moveTo(0,120);ctx.quadraticCurveTo(45,105,90,120);ctx.quadraticCurveTo(135,135,180,120);ctx.lineTo(180,180);ctx.lineTo(0,180);ctx.fill();
+    ctx.fillStyle="rgba(56,189,248,0.2)";
+    ctx.beginPath();ctx.moveTo(0,132);ctx.quadraticCurveTo(45,120,90,132);ctx.quadraticCurveTo(135,144,180,132);ctx.lineTo(180,180);ctx.lineTo(0,180);ctx.fill();
+    // Swimmer emoji
+    ctx.font="80px serif";ctx.textAlign="center";ctx.textBaseline="middle";
+    ctx.fillText("🏊",90,82);
+    const lnk=document.createElement("link");
+    lnk.rel="apple-touch-icon";lnk.href=c.toDataURL();
+    document.head.appendChild(lnk);
+  }catch(e){}
+}
+
+/* ═══════════════════════════════════════════════════
+   INIT
+   ═══════════════════════════════════════════════════ */
+
+tick();
+setInterval(tick,10000);
+setInterval(renderPools,60000);
+renderWeather();
+renderTabs();
+renderPools();
+
+// Splash ausblenden
+function hideSplash() {
+  const s=document.getElementById("splash");
+  s.classList.add("hide");
+  setTimeout(()=>s.remove(),800);
+}
+
+// Automatisch Standort abrufen – Splash weg sobald fertig (oder nach 3s)
+const splashTimeout=setTimeout(hideSplash,3000);
+if(navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(
+    pos=>{
+      clearTimeout(splashTimeout);
+      userLat=pos.coords.latitude;
+      userLng=pos.coords.longitude;
+      document.getElementById("locBtn").className="loc-btn";
+      document.getElementById("locBtn").textContent="📍 Aktuell";
+      if(OWM_KEY!=="DEIN_API_KEY_HIER") fetchWeather();
+      renderPools();
+      hideSplash();
+    },
+    ()=>{ clearTimeout(splashTimeout); hideSplash(); renderPools(); },
+    {timeout:5000,enableHighAccuracy:true}
+  );
+} else { hideSplash(); }
+</script>
+
+</body>
+</html>

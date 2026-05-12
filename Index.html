@@ -193,6 +193,16 @@ html,body { height:100%; background:var(--bg); font-family:'Inter',-apple-system
 #splash .splash-dots span:nth-child(3){animation-delay:.4s}
 @keyframes dotP{0%,80%,100%{background:#1a3560;transform:scale(1)}40%{background:#38bdf8;transform:scale(1.5)}}
 
+.pool-spec { font-size:11px; color:var(--text2); white-space:nowrap; }
+.pcard-crowd {
+  margin-top:10px; padding-top:10px;
+  border-top:1px solid var(--border);
+  display:flex; align-items:center; gap:8px;
+}
+.crowd-chip { display:flex; align-items:center; gap:6px; }
+.crowd-icons { font-size:16px; letter-spacing:1px; line-height:1; }
+.crowd-label { font-size:11px; font-weight:600; }
+
 /* ── FOOTER ─────────────────────────────────────── */
 .footer { font-size:10px; color:var(--text3); text-align:center; line-height:1.7; margin-top:4px; }
 </style>
@@ -302,51 +312,61 @@ const POOLS = [
   {
     name:"Fischerinsel", short:"FI", color:"#0ea5e9", type:"indoor",
     lat:52.5124, lng:13.4044, address:"Fischerinsel 11, 10179",
+    lanes:6, length:25,
     hours:{Mo:[{s:"6:30",e:"8:00"}],Di:[{s:"6:30",e:"8:00"}],Mi:[],Do:[{s:"10:30",e:"17:30"}],Fr:[{s:"6:30",e:"16:00"}],Sa:[],So:[]}
   },
   {
     name:"Sommerbad Kreuzberg", short:"SK", color:"#f59e0b", type:"outdoor",
     lat:52.4979, lng:13.4057, address:"Prinzenstraße 113, 10969",
+    lanes:8, length:50,
     hours:{Mo:[{s:"7:00",e:"20:00"}],Di:[{s:"7:00",e:"20:00"}],Mi:[{s:"7:00",e:"20:00"}],Do:[{s:"7:00",e:"20:00"}],Fr:[{s:"7:00",e:"20:00"}],Sa:[{s:"7:00",e:"20:00"}],So:[{s:"7:00",e:"20:00"}]}
   },
   {
     name:"Stadtbad Mitte", short:"SM", color:"#8b5cf6", type:"indoor",
     lat:52.5295, lng:13.3929, address:"Gartenstraße 5, 10115",
+    lanes:8, length:50,
     hours:{Mo:[{s:"6:30",e:"8:00"},{s:"16:00",e:"22:00"}],Di:[{s:"6:30",e:"8:00"}],Mi:[{s:"6:30",e:"8:00"},{s:"16:00",e:"22:00"}],Do:[{s:"8:00",e:"15:00"}],Fr:[{s:"12:00",e:"22:00"}],Sa:[],So:[]}
   },
   {
     name:"Thälmann-Park", short:"TP", color:"#10b981", type:"indoor",
     lat:52.5409, lng:13.4339, address:"Lilli-Henoch-Str. 20, 10405",
+    lanes:8, length:25,
     hours:{Mo:[{s:"6:30",e:"22:00"}],Di:[{s:"6:30",e:"22:00"}],Mi:[{s:"10:00",e:"22:00"}],Do:[{s:"10:00",e:"17:00"}],Fr:[{s:"6:30",e:"22:00"}],Sa:[],So:[]}
   },
   {
     name:"Stadtbad Tiergarten", short:"ST", color:"#ef4444", type:"indoor",
     lat:52.5275, lng:13.3597, address:"Seydlitzstraße 7, 10557",
+    lanes:8, length:50,
     hours:{Mo:[{s:"6:30",e:"8:00"}],Di:[{s:"6:30",e:"22:00"}],Mi:[{s:"10:00",e:"22:00"}],Do:[{s:"9:00",e:"17:00"}],Fr:[{s:"6:30",e:"22:00"}],Sa:[{s:"9:00",e:"17:00"}],So:[{s:"9:00",e:"17:00"}]}
   },
   {
     name:"SSE Europasportpark", short:"EP", color:"#f97316", type:"indoor",
     lat:52.5291, lng:13.4526, address:"Paul-Heyse-Str. 26, 10407",
+    lanes:10, length:50,
     hours:{Mo:[{s:"6:30",e:"22:30"}],Di:[],Mi:[{s:"6:30",e:"22:30"}],Do:[{s:"10:00",e:"18:00"}],Fr:[{s:"11:00",e:"22:30"}],Sa:[{s:"10:00",e:"18:00"}],So:[{s:"10:00",e:"18:00"}]}
   },
   {
     name:"Stadtbad Neukölln", short:"SN", color:"#ec4899", type:"indoor",
     lat:52.4747, lng:13.4342, address:"Ganghoferstr. 3, 12053",
+    lanes:10, length:50,
     hours:{Mo:[{s:"6:30",e:"22:00"}],Di:[{s:"10:00",e:"22:00"}],Mi:[{s:"6:30",e:"22:00"}],Do:[{s:"10:00",e:"17:00"}],Fr:[{s:"6:30",e:"22:00"}],Sa:[{s:"10:00",e:"17:00"}],So:[{s:"10:00",e:"17:00"}]}
   },
   {
     name:"Stadtbad Charlottenburg", short:"SC", color:"#06b6d4", type:"indoor",
     lat:52.5159, lng:13.3062, address:"Krumme Str. 10, 10585",
+    lanes:6, length:25,
     hours:{Mo:[{s:"6:30",e:"22:00"}],Di:[{s:"10:00",e:"22:00"}],Mi:[{s:"6:30",e:"22:00"}],Do:[{s:"10:00",e:"22:00"}],Fr:[{s:"6:30",e:"22:00"}],Sa:[{s:"10:00",e:"17:00"}],So:[{s:"10:00",e:"17:00"}]}
   },
   {
     name:"Sommerbad Humboldthain", short:"SH", color:"#84cc16", type:"outdoor",
     lat:52.5472, lng:13.3836, address:"Edinburger Str. 4, 13357",
+    lanes:8, length:50,
     hours:{Mo:[{s:"7:00",e:"20:00"}],Di:[{s:"7:00",e:"20:00"}],Mi:[{s:"7:00",e:"20:00"}],Do:[{s:"7:00",e:"20:00"}],Fr:[{s:"7:00",e:"20:00"}],Sa:[{s:"7:00",e:"20:00"}],So:[{s:"7:00",e:"20:00"}]}
   },
   {
     name:"Kombibad Seestraße", short:"KS", color:"#a78bfa", type:"combo",
     lat:52.5516, lng:13.3574, address:"Seestraße 80, 13347",
+    lanes:6, length:25,
     hours:{Mo:[{s:"6:30",e:"22:00"}],Di:[{s:"6:30",e:"22:00"}],Mi:[{s:"6:30",e:"22:00"}],Do:[{s:"10:00",e:"17:00"}],Fr:[{s:"6:30",e:"22:00"}],Sa:[{s:"10:00",e:"20:00"}],So:[{s:"10:00",e:"20:00"}]}
   }
 ];
@@ -384,10 +404,43 @@ function hoursDisplay(pool, day) {
 
 function waterTemp(pool) {
   if(pool.type==="indoor") return "28°C";
-  const m=new Date().getMonth(); // 0=Jan
+  const m=new Date().getMonth();
   const temps=[null,null,null,17,20,22,25,26,23,20,null,null];
   const t=temps[m];
   return t?`${t}°C`:null;
+}
+
+// Fülle-Schätzung basierend auf typischen Berliner Bäder-Mustern
+// 1=ruhig 🏊‍♀️, 2=mittel 🏊‍♀️🏊‍♀️, 3=voll 🏊‍♀️🏊‍♀️🏊‍♀️
+function crowdLevel(dayKey) {
+  const now=new Date();
+  const h=now.getHours()+(now.getMinutes()/60);
+  const isWeekend=(dayKey==="Sa"||dayKey==="So");
+  if(isWeekend){
+    if(h<10) return 1;
+    if(h<11) return 2;
+    if(h<17) return 3;
+    return 2;
+  }
+  // Wochentag
+  if(h<7.5)  return 1; // Frühschwimmer – ruhig
+  if(h<9)    return 2; // Vor der Arbeit
+  if(h<12)   return 1; // Vormittag – ruhig
+  if(h<14)   return 2; // Mittagspause
+  if(h<17)   return 1; // Nachmittag – ruhig
+  if(h<20)   return 3; // Feierabend – sehr voll
+  return 1;            // Abend – ruhig
+}
+
+function crowdHtml(level) {
+  const fig="🏊‍♀️";
+  const colors=["","#4ade80","#fbbf24","#f87171"];
+  const labels=["","Ruhig","Mittel","Voll"];
+  const icons=fig.repeat(level)+"<span style='opacity:.2'>"+fig.repeat(3-level)+"</span>";
+  return `<div class="crowd-chip" title="Erwartete Fülle: ${labels[level]}">
+    <span class="crowd-icons">${icons}</span>
+    <span class="crowd-label" style="color:${colors[level]}">${labels[level]}</span>
+  </div>`;
 }
 
 function fmtDist(d) {
@@ -536,6 +589,7 @@ function renderPools() {
     const wt=waterTemp(p);
     const distStr=p.dist!=null?fmtDist(p.dist):null;
     const typeLabel=p.type==="outdoor"?"☀️ Freibad":p.type==="combo"?"🏗 Kombibad":"🏛 Hallenbad";
+    const crowd=isToday&&hasSlots?crowdLevel(selDay):null;
 
     const hoursHtml=display
       ? display.split(" / ").map(t=>`<div class="phours-line" style="color:${p.color}">${t}</div>`).join("")
@@ -549,6 +603,7 @@ function renderPools() {
       `<div class="status-chip"><span style="color:var(--text3)">${typeLabel}</span></div>`;
 
     const tempHtml=wt?`<div class="temp-chip">💧 <span class="temp-val">${wt}</span></div>`:"";
+    const poolSpecHtml=`<div class="pool-spec">🏊 ${p.lanes} Bahnen · ${p.length}m</div>`;
 
     return `<div class="pcard ${hasSlots?"open":"closed"}${openNow?" open-now":""}">
       <div class="pcard-top">
@@ -564,8 +619,10 @@ function renderPools() {
       </div>
       <div class="pcard-bottom">
         ${statusHtml}
+        ${poolSpecHtml}
         ${tempHtml}
       </div>
+      ${crowd?`<div class="pcard-crowd">${crowdHtml(crowd)}</div>`:""}
     </div>`;
   }).join("");
 }
